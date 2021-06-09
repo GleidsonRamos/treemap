@@ -38,10 +38,21 @@ class TreeNode implements TreeNodeBase {
   TreeNode.leaf({
     @required num value,
     WidgetBuilder builder,
+    Widget toBuild,
     EdgeInsets margin = const EdgeInsets.all(0),
-  })  : _value = value,
-        _builder = builder,
-        _margin = margin;
+  }) {
+    _value = value;
+    _builder = builder;
+    _margin = margin;
+
+    if(toBuild != null){
+      _builder = (BuildContext context){
+        return toBuild;
+      };
+    }
+  }
+
+
 
   int get depth {
     int depth = 0;
