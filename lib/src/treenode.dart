@@ -45,14 +45,12 @@ class TreeNode implements TreeNodeBase {
     _builder = builder;
     _margin = margin;
 
-    if(toBuild != null){
-      _builder = (BuildContext context){
+    if (toBuild != null) {
+      _builder = (BuildContext context) {
         return toBuild;
       };
     }
   }
-
-
 
   int get depth {
     int depth = 0;
