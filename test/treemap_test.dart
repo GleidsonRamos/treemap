@@ -48,9 +48,9 @@ void main() {
     ]);
     var treemap = TreeMap(root: treenode, size: Size(800, 800));
 
-    expect(treemap.root.children![0].top, 10);
-    expect(treemap.root.children![0].left, 30);
-    expect(treemap.root.children![0].bottom, 800 - 20);
-    expect(treemap.root.children![0].right, 800 - 40);
+    expect(treemap.root.children[0].top, 10);
+    expect(treemap.root.children[0].left, 30);
+    expect(treemap.root.children[0].bottom, 800 - 20);
+    expect(treemap.root.children[0].right, 800 - 40);
   });
 }

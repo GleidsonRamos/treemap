@@ -6,11 +6,10 @@ abstract class Tile {
 
   position(TreeNode node, double left, double top, double right, double bottom);
 
-  dice(
-      TreeNodeBase node, double left, double top, double right, double bottom) {
-    var k = (right - left) / node.value!;
+  dice(TreeNodeBase node, double left, double top, double right, double bottom) {
+    var k = (right - left) / node.value;
 
-    for (var child in node.children!) {
+    for (var child in node.children) {
       child.left = left;
       child.top = top;
       child.right = left += child.value * k;
@@ -18,11 +17,10 @@ abstract class Tile {
     }
   }
 
-  slice(
-      TreeNodeBase node, double left, double top, double right, double bottom) {
-    var k = (bottom - top) / node.value!;
+  slice(TreeNodeBase node, double left, double top, double right, double bottom) {
+    var k = (bottom - top) / node.value;
 
-    for (var child in node.children!) {
+    for (var child in node.children) {
       child.left = left;
       child.top = top;
       child.right = right;

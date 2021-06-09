@@ -16,11 +16,11 @@ class TreeMap {
   }
 
   TreeMap({
-    required this.root,
-    required this.size,
+    @required this.root,
+    @required this.size,
     this.tile = const Squarify(),
     this.round = false,
-  })  : assert(root.children!.length > 0),
+  })  : assert(root.children.length > 0),
         assert(size.width > 0 && size.height > 0) {
     root.right = size.width;
     root.bottom = size.height;
@@ -37,8 +37,8 @@ class TreeMap {
     if (node.bottom < node.top) node.top = node.bottom = (node.top + node.bottom) / 2;
 
     if (node.children != null) {
-      tile.position(node, node.left + node.padding!.left, node.top + node.padding!.top,
-          node.right - node.padding!.right, node.bottom - node.padding!.bottom);
+      tile.position(node, node.left + node.padding.left, node.top + node.padding.top, node.right - node.padding.right,
+          node.bottom - node.padding.bottom);
     }
   }
 
